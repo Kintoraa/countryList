@@ -18,9 +18,7 @@ const fetchCountry = async () => {
 
   console.log(countrys);
   card.innerHTML = countrys
-    .filter((country) =>
-      country.name.common.includes(inputSearch.value.toUpperCase())
-    )
+    .filter((country) => country.name.common.includes(inputSearch.value))
     .sort((a, b) => {
       if (btnTri === "minToMax") {
         return a.population - b.population;
