@@ -1,14 +1,9 @@
-// 1 - Tester le lien de l'API dans le navigateur (https://restcountries.com/v3.1/all)
-
-// 2 - Créer une fonction pour "fetcher" les données, afficher les données dans la console.
-let countrys = [];
-
 const card = document.querySelector(".countries-container");
 const input = document.querySelector("input");
 const inputRange = document.getElementById("inputRange");
 const inputSearch = document.getElementById("inputSearch");
 const btn = document.querySelectorAll("button");
-// Get info API
+let countrys = [];
 let btnTri;
 
 const fetchCountry = async () => {
@@ -16,7 +11,6 @@ const fetchCountry = async () => {
     .then((res) => res.json())
     .then((data) => (countrys = data));
 
-  console.log(countrys);
   card.innerHTML = countrys
     .filter((country) =>
       country.name.common
